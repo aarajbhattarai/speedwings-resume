@@ -37,6 +37,7 @@ export const ResumePDFProfile = ({
             ...styles.flexCol,
             flexWrap: "wrap",
             marginTop: spacing["0.5"],
+            maxWidth: picture ? "80%" : "100%",
           }}
         >
           <ResumePDFText
@@ -47,12 +48,28 @@ export const ResumePDFProfile = ({
             {name}
           </ResumePDFText>
           {summary && (
-            <ResumePDFText style={{ marginTop: 20 }}>{summary}</ResumePDFText>
+            <View
+              style={{
+                display: "flex",
+                //   flexWrap: "wrap",
+                //   maxWidth: "100%",
+                //   overflow: "hidden",
+              }}
+            >
+              <ResumePDFText
+                style={{
+                  marginTop: 20,
+                  textAlign: "justify",
+                }}
+              >
+                {summary}
+              </ResumePDFText>
+            </View>
           )}
         </View>
 
         {picture !== "" ? (
-          <View>
+          <View style={{ alignContent: "center" }}>
             <Image
               src={picture}
               style={{
@@ -70,7 +87,7 @@ export const ResumePDFProfile = ({
                 borderRadius: 40,
                 marginLeft: spacing["1"],
               }}
-            />{" "}
+            />
           </View>
         ) : null}
       </View>
