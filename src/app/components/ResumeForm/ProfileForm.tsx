@@ -59,6 +59,7 @@ export const ProfileForm = () => {
           name="summary"
           placeholder="A Right Recruiter can hire a right talent"
           value={summary}
+          maxLength={280}
           onChange={handleProfileChange}
         />
         <Input
