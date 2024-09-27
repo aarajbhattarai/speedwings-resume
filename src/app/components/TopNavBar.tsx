@@ -19,11 +19,13 @@ export const TopNavBar = () => {
     >
       <div className="flex h-full w-full items-center justify-between">
         <Link href="/">
-          <span className="sr-only">Speed Wings HUman Rsource Resume Builder</span>
+          <span className="sr-only">
+            Speed Wings HUman Rsource Resume Builder
+          </span>
           <Image
             src={logoSrc}
-            alt="Speed Wings HUman Rsource Resume Builder"
-            className="h-full w-full"
+            alt="Speed Wings Human Rsource Resume Builder"
+            className="h-20 w-full"
             priority
           />
         </Link>
@@ -43,7 +45,7 @@ export const TopNavBar = () => {
               {text}
             </Link>
           ))}
-          <div className="ml-1 mt-1">
+          {/* <div className="ml-1 mt-1">
             <iframe
               src="www.speedwinghr.com"
               width="100"
@@ -51,7 +53,7 @@ export const TopNavBar = () => {
               className="overflow-hidden border-none"
               title="GitHub"
             />
-          </div>
+          </div> */}
         </nav>
       </div>
     </header>
