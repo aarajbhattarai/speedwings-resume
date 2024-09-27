@@ -10,7 +10,7 @@ import { DEFAULT_FONT_COLOR } from "lib/redux/settingsSlice";
 import type { Settings, ShowForm } from "lib/redux/settingsSlice";
 import type { Resume } from "lib/redux/types";
 import { SuppressResumePDFErrorMessage } from "components/Resume/ResumePDF/common/SuppressResumePDFErrorMessage";
-import { ResumePDFWatermark } from "./ResumePDFWatermark";
+// import { ResumePDFWatermark } from "./ResumePDFWatermark";
 
 /**
  * Note: ResumePDF is supposed to be rendered inside PDFViewer. However,
@@ -91,6 +91,7 @@ export const ResumePDF = ({
         showBulletPoints={showBulletPoints["custom"]}
       />
     ),
+    
   };
 
   return (
@@ -134,7 +135,7 @@ export const ResumePDF = ({
               return <Component key={form} />;
             })}
           </View>
-          <ResumePDFWatermark />
+          {/* <ResumePDFWatermark /> */}
         </Page>
       </Document>
       <SuppressResumePDFErrorMessage />

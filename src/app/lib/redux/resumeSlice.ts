@@ -16,7 +16,7 @@ export const initialProfile: ResumeProfile = {
   summary: "",
   email: "",
   phone: "",
-  location: "",
+  homeAddress: "",
   url: "",
   picture: "",
 };

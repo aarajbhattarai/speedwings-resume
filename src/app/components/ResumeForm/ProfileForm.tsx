@@ -15,7 +15,7 @@ import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 export const ProfileForm = () => {
   const profile = useAppSelector(selectProfile);
   const dispatch = useAppDispatch();
-  const { name, email, phone, url, summary, location, picture } = profile;
+  const { name, email, phone, url, summary, homeAddress, picture } = profile;
 
   const handleProfileChange = (field: keyof ResumeProfile, value: string) => {
     dispatch(changeProfile({ field, value }));
@@ -54,7 +54,7 @@ export const ProfileForm = () => {
           onChange={handleProfileChange}
         />
         <Textarea
-          label="Objective"
+          label="Summary"
           labelClassName="col-span-full"
           name="summary"
           placeholder="A Right Recruiter can hire a right talent"
@@ -62,7 +62,7 @@ export const ProfileForm = () => {
           onChange={handleProfileChange}
         />
         <Input
-          label="Email"
+          label="Email Address"
           labelClassName="col-span-4"
           name="email"
           placeholder="sarojphuyal@gmail.com"
@@ -70,7 +70,7 @@ export const ProfileForm = () => {
           onChange={handleProfileChange}
         />
         <Input
-          label="Phone"
+          label="Phone Number"
           labelClassName="col-span-2"
           name="phone"
           placeholder="(977) 9851345343"
@@ -78,7 +78,7 @@ export const ProfileForm = () => {
           onChange={handleProfileChange}
         />
         <Input
-          label="Website"
+          label="Social Media URL"
           labelClassName="col-span-4"
           name="url"
           placeholder="linkedin.com/speed-wings-human-resource"
@@ -86,11 +86,11 @@ export const ProfileForm = () => {
           onChange={handleProfileChange}
         />
         <Input
-          label="Location"
+          label="Home Address"
           labelClassName="col-span-2"
-          name="location"
+          name="homeAddress"
           placeholder="Kathmandu, Nepal"
-          value={location}
+          value={homeAddress}
           onChange={handleProfileChange}
         />
         <div className="flex w-[100%] items-end gap-1 lg:w-[46%]">

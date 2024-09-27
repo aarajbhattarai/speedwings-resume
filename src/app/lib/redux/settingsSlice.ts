@@ -55,7 +55,7 @@ export const initialSettings: Settings = {
   },
   formToHeading: {
     workExperiences: "WORK EXPERIENCE",
-    educations: "EDUCATION",
+    educations: "EDUCATION AND TRAINING",
     projects: "PROJECT",
     skills: "SKILLS",
     custom: "CUSTOM SECTION",

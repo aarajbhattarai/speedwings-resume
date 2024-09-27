@@ -29,7 +29,7 @@ export const matchPhone = (item: TextItem) =>
 const hasParenthesis = (item: TextItem) => /\([0-9]+\)/.test(item.text);
 
 // Location
-// Simple location regex that matches "<City>, <ST>"
+// Simple homeAddress regex that matches "<City>, <ST>"
 export const matchCityAndState = (item: TextItem) =>
   item.text.match(/[A-Z][a-zA-Z\s]+, [A-Z]{2}/);
 
@@ -92,7 +92,7 @@ const PHONE_FEATURE_SETS: FeatureSet[] = [
   [hasLetter, -4], // Name, Email, Location, Url, Summary
 ];
 
-// Location -> match location regex <City>, <ST>
+// Location -> match homeAddress regex <City>, <ST>
 const LOCATION_FEATURE_SETS: FeatureSet[] = [
   [matchCityAndState, 4, true],
   [isBold, -1], // Name
@@ -138,7 +138,7 @@ export const extractProfile = (sections: ResumeSectionToLines) => {
     textItems,
     PHONE_FEATURE_SETS
   );
-  const [location, locationScores] = getTextWithHighestFeatureScore(
+  const [homeAddress, homeAddressScores] = getTextWithHighestFeatureScore(
     textItems,
     LOCATION_FEATURE_SETS
   );
@@ -169,7 +169,7 @@ export const extractProfile = (sections: ResumeSectionToLines) => {
       name,
       email,
       phone,
-      location,
+      homeAddress,
       url,
       // Dedicated section takes higher precedence over profile summary
       summary: summarySection || objectiveSection || summary,
@@ -179,7 +179,7 @@ export const extractProfile = (sections: ResumeSectionToLines) => {
       name: nameScores,
       email: emailScores,
       phone: phoneScores,
-      location: locationScores,
+      homeAddress: homeAddressScores,
       url: urlScores,
       summary: summaryScores,
     },

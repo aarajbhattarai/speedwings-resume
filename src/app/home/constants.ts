@@ -14,7 +14,7 @@ export const END_HOME_RESUME: Resume = {
       "Experienced Nepali chef with a passion for traditional flavors and innovative culinary techniques",
     email: "ram.nepal@gmail.com",
     phone: "123-456-7890",
-    location: "Kathmandu, Nepal",
+    homeAddress: "Kathmandu, Nepal",
     url: "linkedin.com/in/ram-nepal",
   },
   workExperiences: [

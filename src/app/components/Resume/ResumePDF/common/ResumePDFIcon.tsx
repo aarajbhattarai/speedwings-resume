@@ -20,7 +20,7 @@ const LINKEDIN_PATH_D =
 const TYPE_TO_PATH_D = {
   email: EMAIL_PATH_D,
   phone: PHONE_PATH_D,
-  location: LOCATION_PATH_D,
+  homeAddress: LOCATION_PATH_D,
   url: URL_PATH_D,
   url_github: GITHUB_PATH_D,
   url_linkedin: LINKEDIN_PATH_D,
@@ -29,7 +29,7 @@ const TYPE_TO_PATH_D = {
 export type IconType =
   | "email"
   | "phone"
-  | "location"
+  | "homeAddress"
   | "url"
   | "url_github"
   | "url_linkedin";

@@ -20,8 +20,8 @@ export const ResumePDFProfile = ({
   themeColor: string;
   isPDF: boolean;
 }) => {
-  const { name, email, phone, url, summary, location, picture } = profile;
-  const iconProps = { email, phone, location, url };
+  const { name, email, phone, url, summary, homeAddress, picture } = profile;
+  const iconProps = { email, phone, homeAddress, url };
 
   return (
     <ResumePDFSection style={{ marginTop: spacing["4"] }}>

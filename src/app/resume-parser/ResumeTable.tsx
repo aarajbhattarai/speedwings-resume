@@ -63,7 +63,7 @@ export const ResumeTable = ({ resume }: { resume: Resume }) => {
         <TableRow label="Name" value={resume.profile.name} />
         <TableRow label="Email" value={resume.profile.email} />
         <TableRow label="Phone" value={resume.profile.phone} />
-        <TableRow label="Location" value={resume.profile.location} />
+        <TableRow label="Location" value={resume.profile.homeAddress} />
         <TableRow label="Link" value={resume.profile.url} />
         <TableRow label="Summary" value={resume.profile.summary} />
         <TableRowHeader>Education</TableRowHeader>
