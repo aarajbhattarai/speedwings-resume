@@ -11,6 +11,7 @@ interface InputProps<K extends string, V extends string | string[]> {
   value?: V;
   placeholder: string;
   onChange: (name: K, value: V) => void;
+  maxLength?: number;
 }
 
 /**
@@ -62,6 +63,7 @@ export const Textarea = <T extends string>({
   labelClassName: wrapperClassName,
   name,
   value = "",
+  maxLength = 55,
   placeholder,
   onChange,
 }: InputProps<T, string>) => {
@@ -73,8 +75,9 @@ export const Textarea = <T extends string>({
         ref={textareaRef}
         name={name}
         className={`${INPUT_CLASS_NAME} resize-none overflow-hidden`}
-        placeholder={placeholder}
+        placeholder={`${placeholder} (Max 280 characters)`}
         value={value}
+        maxLength={maxLength}
         onChange={(e) => onChange(name, e.target.value)}
       />
     </InputGroupWrapper>
