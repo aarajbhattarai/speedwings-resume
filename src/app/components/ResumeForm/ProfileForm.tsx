@@ -105,7 +105,7 @@ export const ProfileForm = () => {
           label="Email Address"
           labelClassName="col-span-4"
           name="email"
-          placeholder="sarojphuyal@gmail.com"
+          placeholder="speedwings@gmail.com"
           value={email}
           onChange={handleProfileChange}
         />
@@ -113,7 +113,7 @@ export const ProfileForm = () => {
           label="Gender"
           labelClassName="col-span-2"
           name="gender"
-          placeholder="sarojphuyal@gmail.com"
+          placeholder="Male"
           value={gender}
           onChange={handleProfileChange}
         />
