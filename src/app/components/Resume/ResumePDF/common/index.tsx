@@ -2,7 +2,7 @@ import { Text, View, Link } from "@react-pdf/renderer";
 import type { Style } from "@react-pdf/types";
 import { styles, spacing } from "components/Resume/ResumePDF/styles";
 import { DEBUG_RESUME_PDF_FLAG } from "lib/constants";
-import { DEFAULT_FONT_COLOR } from "lib/redux/settingsSlice";
+import { DEFAULT_BLACK, DEFAULT_FONT_COLOR } from "lib/redux/settingsSlice";
 
 export const ResumePDFSection = ({
   themeColor,
@@ -39,7 +39,8 @@ export const ResumePDFSection = ({
         <Text
           style={{
             fontWeight: "bold",
-            letterSpacing: "0.3pt", // tracking-wide -> 0.025em * 12 pt = 0.3pt
+            letterSpacing: "0.3pt",
+            color:themeColor  // tracking-wide -> 0.025em * 12 pt = 0.3pt
           }}
           debug={DEBUG_RESUME_PDF_FLAG}
         >
@@ -66,6 +67,30 @@ export const ResumePDFText = ({
     <Text
       style={{
         color: themeColor || DEFAULT_FONT_COLOR,
+        fontWeight: bold ? "bold" : "normal",
+        ...style,
+      }}
+      debug={DEBUG_RESUME_PDF_FLAG}
+    >
+      {children}
+    </Text>
+  );
+};
+
+export const ResumePDFProfileText = ({
+  bold = false,
+  style = {},
+  children,
+}: {
+  bold?: boolean;
+  themeColor?: string;
+  style?: Style;
+  children: React.ReactNode;
+}) => {
+  return (
+    <Text
+      style={{
+        color: DEFAULT_BLACK,
         fontWeight: bold ? "bold" : "normal",
         ...style,
       }}

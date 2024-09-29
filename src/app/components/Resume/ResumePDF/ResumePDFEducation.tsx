@@ -40,11 +40,11 @@ export const ResumePDFEducation = ({
                     : spacing["1.5"],
                 }}
               >
-                <ResumePDFText>{`${
+                {/* <ResumePDFText>{`${
                   gpa
                     ? `${degree} - ${Number(gpa) ? gpa + " GPA" : gpa}`
                     : degree
-                }`}</ResumePDFText>
+                }`}</ResumePDFText> */}
                 <ResumePDFText>{date}</ResumePDFText>
               </View>
               {showDescriptions && (

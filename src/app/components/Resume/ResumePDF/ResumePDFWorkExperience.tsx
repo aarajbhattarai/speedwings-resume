@@ -30,14 +30,14 @@ export const ResumePDFWorkExperience = ({
             )}
             <View
               style={{
-                ...styles.flexRowBetween,
+                ...styles.flexRow,
                 marginTop: hideCompanyName
                   ? "-" + spacing["1"]
                   : spacing["1.5"],
               }}
             >
               <ResumePDFText>{jobTitle}</ResumePDFText>
-              <ResumePDFText>{date}</ResumePDFText>
+              <ResumePDFText> ({date}) </ResumePDFText>
             </View>
             <View style={{ ...styles.flexCol, marginTop: spacing["1.5"] }}>
               <ResumePDFBulletList items={descriptions} />

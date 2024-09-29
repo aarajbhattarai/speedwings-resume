@@ -73,14 +73,14 @@ export const EducationsForm = () => {
               value={degree}
               onChange={handleEducationChange}
             />
-            <Input
+            {/* <Input
               label="GPA"
               labelClassName="col-span-2"
               name="gpa"
               placeholder="3.81"
               value={gpa}
               onChange={handleEducationChange}
-            />
+            /> */}
             <div className="relative col-span-full">
               <BulletListTextarea
                 label="Additional Information (Optional)"

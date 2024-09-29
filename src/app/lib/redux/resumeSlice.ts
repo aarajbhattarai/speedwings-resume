@@ -10,6 +10,7 @@ import type {
   ResumeWorkExperience,
 } from "lib/redux/types";
 import type { ShowForm } from "lib/redux/settingsSlice";
+import { stat } from "fs";
 
 export const initialProfile: ResumeProfile = {
   name: "",
@@ -19,6 +20,9 @@ export const initialProfile: ResumeProfile = {
   homeAddress: "",
   url: "",
   picture: "",
+  dateOfBirth:"",
+  gender:"",
+  nationality:""
 };
 
 export const initialWorkExperience: ResumeWorkExperience = {
@@ -88,6 +92,9 @@ export const resumeSlice = createSlice({
       }>
     ) => {
       const { field, value, type } = action.payload;
+      // console.log("field",field);
+      // console.log("value",value);
+      console.log("type", field, value);
       if (type == "picture") {
         draft.profile["picture"] = value;
       } else if (type == "removepicture") {
@@ -226,6 +233,7 @@ export const {
 
 export const selectResume = (state: RootState) => state.resume;
 export const selectProfile = (state: RootState) => state.resume.profile;
+// console.log(state.resume.profile);
 export const selectWorkExperiences = (state: RootState) =>
   state.resume.workExperiences;
 export const selectEducations = (state: RootState) => state.resume.educations;

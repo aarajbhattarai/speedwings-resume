@@ -15,7 +15,18 @@ import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 export const ProfileForm = () => {
   const profile = useAppSelector(selectProfile);
   const dispatch = useAppDispatch();
-  const { name, email, phone, url, summary, homeAddress, picture } = profile;
+  const {
+    name,
+    email,
+    phone,
+    url,
+    summary,
+    homeAddress,
+    picture,
+    dateOfBirth,
+    gender,
+    nationality,
+  } = profile;
 
   const handleProfileChange = (field: keyof ResumeProfile, value: string) => {
     dispatch(changeProfile({ field, value }));
@@ -59,15 +70,60 @@ export const ProfileForm = () => {
           name="summary"
           placeholder="A Right Recruiter can hire a right talent"
           value={summary}
-          maxLength={280}
+          maxLength={4000}
           onChange={handleProfileChange}
         />
+        <Input
+          label="Home Address"
+          labelClassName="col-span-4"
+          name="homeAddress"
+          placeholder="Kathmandu, Nepal"
+          value={homeAddress}
+          onChange={handleProfileChange}
+        />
+
+        <Input
+          label="Date of Birth"
+          labelClassName="col-span-4"
+          name="dateOfBirth"
+          type="date"
+          placeholder="YYYY-MM-DD"
+          value={dateOfBirth}
+          onChange={handleProfileChange}
+        />
+
+        <Input
+          label="Nationality"
+          labelClassName="col-span-2"
+          name="nationality"
+          placeholder="Nepali"
+          value={nationality}
+          onChange={handleProfileChange}
+        />
+
         <Input
           label="Email Address"
           labelClassName="col-span-4"
           name="email"
           placeholder="sarojphuyal@gmail.com"
           value={email}
+          onChange={handleProfileChange}
+        />
+        <Input
+          label="Gender"
+          labelClassName="col-span-2"
+          name="gender"
+          placeholder="sarojphuyal@gmail.com"
+          value={gender}
+          onChange={handleProfileChange}
+        />
+
+        <Input
+          label="Social Media Link"
+          labelClassName="col-span-4"
+          name="url"
+          placeholder="linkedin.com/speed-wings-human-resource"
+          value={url}
           onChange={handleProfileChange}
         />
         <Input
@@ -78,22 +134,7 @@ export const ProfileForm = () => {
           value={phone}
           onChange={handleProfileChange}
         />
-        <Input
-          label="Social Media URL"
-          labelClassName="col-span-4"
-          name="url"
-          placeholder="linkedin.com/speed-wings-human-resource"
-          value={url}
-          onChange={handleProfileChange}
-        />
-        <Input
-          label="Home Address"
-          labelClassName="col-span-2"
-          name="homeAddress"
-          placeholder="Kathmandu, Nepal"
-          value={homeAddress}
-          onChange={handleProfileChange}
-        />
+
         <div className="flex w-[100%] items-end gap-1 lg:w-[46%]">
           <InputGroupWrapper label={"Profile Picture"} className={"col-span-2"}>
             <div className="flex h-[100px] w-[200px] items-center justify-center border">

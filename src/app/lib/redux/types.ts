@@ -6,7 +6,9 @@ export interface ResumeProfile {
   summary: string;
   homeAddress: string;
   picture?: string;
-  
+  dateOfBirth: string;
+  gender: string;
+  nationality: string;
 }
 
 export interface ResumeWorkExperience {

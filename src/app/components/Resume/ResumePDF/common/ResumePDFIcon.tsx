@@ -31,7 +31,6 @@ export type IconType =
   | "phone"
   | "homeAddress"
   | "url"
-  | "url_github"
   | "url_linkedin";
 
 export const ResumePDFIcon = ({
