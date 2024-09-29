@@ -100,7 +100,17 @@ const LOCATION_FEATURE_SETS: FeatureSet[] = [
   [hasParenthesis, -3], // Phone
   [hasSlash, -4], // Url
 ];
+const DATE_OF_BIRTH_FEATURE_SETS: FeatureSet[] = [
+  [hasLetter, -4,] // Name, Email, Location, Url, Summary
+];
 
+const GENDER_FEATURE_SETS: FeatureSet[] = [
+  [hasLetter, -4],
+];
+
+const NATIONALITY_FEATURE_SETS: FeatureSet[] = [
+  [hasLetter, -4],
+];
 // URL -> match url regex xxx.xxx/xxx
 const URL_FEATURE_SETS: FeatureSet[] = [
   [matchUrl, 4, true],
@@ -142,6 +152,18 @@ export const extractProfile = (sections: ResumeSectionToLines) => {
     textItems,
     LOCATION_FEATURE_SETS
   );
+  const [dateOfBirth, dateOfBirthScores] = getTextWithHighestFeatureScore(
+    textItems,
+    DATE_OF_BIRTH_FEATURE_SETS
+  );
+  const [gender, genderScores] = getTextWithHighestFeatureScore(
+    textItems,
+    GENDER_FEATURE_SETS
+  );
+  const [nationality, nationalityScores] = getTextWithHighestFeatureScore(
+    textItems,
+    NATIONALITY_FEATURE_SETS
+  );
   const [url, urlScores] = getTextWithHighestFeatureScore(
     textItems,
     URL_FEATURE_SETS
@@ -173,6 +195,9 @@ export const extractProfile = (sections: ResumeSectionToLines) => {
       url,
       // Dedicated section takes higher precedence over profile summary
       summary: summarySection || objectiveSection || summary,
+      dateOfBirth,
+      gender,
+      nationality,
     },
     // For debugging
     profileScores: {

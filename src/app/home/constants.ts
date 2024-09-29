@@ -16,6 +16,9 @@ export const END_HOME_RESUME: Resume = {
     phone: "123-456-7890",
     homeAddress: "Kathmandu, Nepal",
     url: "linkedin.com/in/ram-nepal",
+    dateOfBirth: "1990-05-15",
+    gender: "Male",
+    nationality: "Nepali",
   },
   workExperiences: [
     {
